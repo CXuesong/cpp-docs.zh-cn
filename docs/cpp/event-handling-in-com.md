@@ -41,7 +41,7 @@ ms.lasthandoff: 12/21/2017
  在事件源类中，使用[__event](../cpp/event.md)在接口声明以该接口将方法声明为事件的关键字。 当您将该接口的事件作为接口方法调用时，将激发这些事件。 事件接口上的方法可以具有零个或多个参数 (应全是**中**参数)。 返回类型可以是 void 或任何整型。  
   
 ## <a name="defining-event-handlers"></a>定义事件处理程序  
- 在事件接收器类中，可定义事件处理程序，这些处理程序是具有与它们将处理的事件匹配的签名（返回类型、调用约定和自变量）的方法。 对于 COM 事件，调用约定不必匹配;请参阅[布局依赖于 COM 事件](#vcconeventhandlingincomanchorlayoutdependentcomevents)下面有关详细信息。  
+ 在事件接收器类中，可定义事件处理程序，这些处理程序是具有与它们将处理的事件匹配的签名（返回类型、调用约定和参数）的方法。 对于 COM 事件，调用约定不必匹配;请参阅[布局依赖于 COM 事件](#vcconeventhandlingincomanchorlayoutdependentcomevents)下面有关详细信息。  
   
 ## <a name="hooking-event-handlers-to-events"></a>将事件处理程序挂钩到事件  
  此外在事件接收器类中，使用内部函数[__hook](../cpp/hook.md)若要将事件与事件处理程序关联和[__unhook](../cpp/unhook.md)取消事件与事件处理程序。 您可将多个事件挂钩到一个事件处理程序，或将多个事件处理程序挂钩到一个事件。  
@@ -163,7 +163,7 @@ MyHandler2 was called with value 123.
 ```  
   
 ##  <a name="vcconeventhandlingincomanchorlayoutdependentcomevents"></a>布局取决于 COM 事件  
- 布局依赖性只是 COM 编程中的一个问题。 在本机和托管事件处理中，处理程序的签名（返回类型、调用约定和自变量）必须与其事件匹配，但处理程序的名称不必与其事件匹配。  
+ 布局依赖性只是 COM 编程中的一个问题。 在本机和托管事件处理中，处理程序的签名（返回类型、调用约定和参数）必须与其事件匹配，但处理程序的名称不必与其事件匹配。  
   
  但是，在 COM 事件处理中，当你设置*layout_dependent*参数**event_receiver**到**true**，强制执行的名称和签名匹配。 这意味着事件接收器中处理程序的名称和签名必须与处理程序将挂钩到的事件的名称和签名完全匹配。  
   

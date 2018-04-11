@@ -79,7 +79,7 @@ ms.lasthandoff: 12/21/2017
     // ...  
     ```  
   
-     如果模板自变量是派生类，则此解决方法将失败。 例如:  
+     如果模板参数是派生类，则此解决方法将失败。 例如:  
   
     ```  
     class __declspec(dllexport) D : public B<D> {  

@@ -27,7 +27,7 @@ ms.lasthandoff: 12/21/2017
 # <a name="numeric-boolean-and-pointer-literals--c"></a>数值、 布尔和指针文本 （C++）
 文本是一种直接表示值的程序元素。 本文介绍整数、浮点、布尔和指针类型的文本。 有关字符串和字符文本的信息，请参阅[字符串和字符文本 （C++）](../cpp/string-and-character-literals-cpp.md)。 你还可以定义基于任何这些类别中; 你自己的文本有关详细信息请参阅[用户定义文本 （C++）](../cpp/user-defined-literals-cpp.md)  
   
- . 你可以在许多上下文中使用文本，但文本的最常用法是初始化命名变量以及将自变量传递给函数：  
+ . 你可以在许多上下文中使用文本，但文本的最常用法是初始化命名变量以及将参数传递给函数：  
   
 ```  
 const int answer = 42; // integer literal  

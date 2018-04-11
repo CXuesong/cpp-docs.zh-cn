@@ -264,4 +264,4 @@ a
   
 ## <a name="see-also"></a>请参阅  
 
-[默认自变量](../cpp/default-arguments.md)
+[默认参数](../cpp/default-arguments.md)

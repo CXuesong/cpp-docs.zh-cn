@@ -118,7 +118,7 @@ int main() {
 ## <a name="comment"></a>注释  
  本节中的主题：  
   
--   [引用类型函数自变量](../cpp/reference-type-function-arguments.md)  
+-   [引用类型函数参数](../cpp/reference-type-function-arguments.md)  
   
 -   [引用类型函数返回](../cpp/reference-type-function-returns.md)  
   

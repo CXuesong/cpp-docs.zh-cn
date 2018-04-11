@@ -1,5 +1,5 @@
 ---
-title: "默认自变量 |Microsoft 文档"
+title: "默认参数 |Microsoft 文档"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -28,8 +28,8 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 12/21/2017
 ---
-# <a name="default-arguments"></a>默认自变量
-在许多情况下，函数具有不常使用的自变量，因为使用默认值便已足够。 为了解决此问题，默认自变量工具允许为函数仅指定在给定调用中有意义的自变量。 若要阐明这个概念，请考虑在提供的示例[函数重载](../cpp/function-overloading.md)。  
+# <a name="default-arguments"></a>默认参数
+在许多情况下，函数具有不常使用的参数，因为使用默认值便已足够。 为了解决此问题，默认参数工具允许为函数仅指定在给定调用中有意义的参数。 若要阐明这个概念，请考虑在提供的示例[函数重载](../cpp/function-overloading.md)。  
   
 ```  
 // Prototype three print functions.  
@@ -91,7 +91,7 @@ print( d, 0 ); // Override default argument to achieve other
   
  使用默认参数时，请注意以下几点：  
   
--   默认自变量仅在其中省略了尾随自变量的函数调用中使用 - 它们必须是最后的自变量。 因此，以下代码是非法的：  
+-   默认参数仅在其中省略了尾随参数的函数调用中使用 - 它们必须是最后的参数。 因此，以下代码是非法的：  
   
     ```  
     int print( double dvalue = 0.0, int prec );  
@@ -114,7 +114,7 @@ print( d, 0 ); // Override default argument to achieve other
   
      此代码的问题在于定义中的函数声明重新定义了 `prec` 的默认参数。  
   
--   以后的声明可添加额外的默认自变量。  
+-   以后的声明可添加额外的默认参数。  
   
 -   可为指向函数的指针提供默认参数。 例如:  
   

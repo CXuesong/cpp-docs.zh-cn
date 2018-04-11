@@ -34,9 +34,9 @@ ms.lasthandoff: 12/21/2017
 ---
 # <a name="customizing-c-command-line-processing"></a>自定义 C++ 命令行处理
 ## <a name="microsoft-specific"></a>Microsoft 专用  
- 如果程序不采用命令行自变量，则可以通过取消使用执行命令行处理的库例程来节省少量空间。 此例程称为**_setargv**和中所述[通配符扩展](../cpp/wildcard-expansion.md)。 若要禁止使用它，请定义不执行任何操作中包含的文件的例程**主要**函数，并将其命名**_setargv**。 调用**_setargv**然后按照你定义满足**_setargv**，并且不加载库版本。  
+ 如果程序不采用命令行参数，则可以通过取消使用执行命令行处理的库例程来节省少量空间。 此例程称为**_setargv**和中所述[通配符扩展](../cpp/wildcard-expansion.md)。 若要禁止使用它，请定义不执行任何操作中包含的文件的例程**主要**函数，并将其命名**_setargv**。 调用**_setargv**然后按照你定义满足**_setargv**，并且不加载库版本。  
   
- 同样，如果你永远不会访问环境表通过`envp`自变量，你可以提供你自己的空例程用于代替了**_setenvp**，环境处理例程。 正如使用**_setargv**函数， **_setenvp**必须声明为**extern"C"**。  
+ 同样，如果你永远不会访问环境表通过`envp`参数，你可以提供你自己的空例程用于代替了**_setenvp**，环境处理例程。 正如使用**_setargv**函数， **_setenvp**必须声明为**extern"C"**。  
   
  程序可以调用**spawn**或`exec`系列 C 运行时库中的例程。 如果是这样，则不应取消环境处理例程，因为可使用此例程将环境从父进程传递到子进程中。  
   

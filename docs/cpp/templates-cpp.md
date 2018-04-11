@@ -28,7 +28,7 @@ ms.lasthandoff: 12/21/2017
 模板是用于在 C++ 中泛型的编程的基础。 作为强类型语言，C++ 需要具有特定类型，显式声明由程序员或由编译器推导的所有变量。 但是，许多数据结构和算法如果查阅无论它们只在运行哪种类型相同。 模板启用您定义的操作的类或函数，并使用户能够指定哪些具体类型这些操作不应处理。  
   
 ## <a name="defining-and-using-templates"></a>定义和使用模板  
- 模板是一个构造，用于生成普通类型或函数在编译时根据在用户提供的模板参数的自变量。 例如，你可以定义函数模板如下：  
+ 模板是一个构造，用于生成普通类型或函数在编译时根据在用户提供的模板参数的参数。 例如，你可以定义函数模板如下：  
   
 ```cpp  
 template <typename T>  
@@ -48,7 +48,7 @@ int b = get_b();
 int i = minimum<int>(a, b);  
 ```  
   
- 但是，因为这是函数模板和编译器可以推断出的一种`T`从自变量`a`和`b`，则可以调用它时就像普通函数一样：  
+ 但是，因为这是函数模板和编译器可以推断出的一种`T`从参数`a`和`b`，则可以调用它时就像普通函数一样：  
   
 ```cpp  
 int i = minimum(a, b);  
@@ -92,7 +92,7 @@ vtclass<int> vtinstance2;
 vtclass<float, bool> vtinstance3;  
 ```  
   
- 任何内置或用户定义类型可以用作类型参数。 例如，你可以使用 std:: vector 标准库中存储的整数、 双精度型值、 字符串，MyClass、 const MyClass *、 MyClass （& a)。 使用模板时的主要限制是一个类型自变量必须支持应用于类型参数的任何操作。 例如，如果我们调用最小如此示例所示使用 MyClass:  
+ 任何内置或用户定义类型可以用作类型参数。 例如，你可以使用 std:: vector 标准库中存储的整数、 双精度型值、 字符串，MyClass、 const MyClass *、 MyClass （& a)。 使用模板时的主要限制是一个类型参数必须支持应用于类型参数的任何操作。 例如，如果我们调用最小如此示例所示使用 MyClass:  
   
 ```cpp  
 class MyClass  
@@ -173,8 +173,8 @@ class MyClass2
 };  
 ```  
   
-## <a name="default-template-arguments"></a>默认模板自变量  
- 类和函数模板可以具有默认自变量。 当模板具有默认自变量可以将它未指定何时使用它。 例如，已分配器的默认参数的 std:: vector 模板：  
+## <a name="default-template-arguments"></a>默认模板参数  
+ 类和函数模板可以具有默认参数。 当模板具有默认参数可以将它未指定何时使用它。 例如，已分配器的默认参数的 std:: vector 模板：  
   
 ```cpp  
 template <class T, class Allocator = allocator<T>> class vector;  
@@ -192,7 +192,7 @@ vector<int> myInts;
 vector<int, MyAllocator> ints;  
 ```  
   
- 对于多个模板自变量，第一个默认自变量后的所有自变量必须具有默认自变量。  
+ 对于多个模板参数，第一个默认参数后的所有参数必须具有默认参数。  
   
  当使用其参数都所有默认的模板，则使用空尖括号：  
   

@@ -40,12 +40,12 @@ ms.lasthandoff: 12/21/2017
 |[__based](../cpp/based-grammar.md)|后跟的名称将 32 位偏移量声明为包含在声明中的 32 位基。|是|  
 |[__cdecl](../cpp/cdecl.md)|后跟的名称使用 C 命名和调用约定。|是|  
 |[__declspec](../cpp/declspec.md)|后跟的名称指定 Microsoft 特定的存储类特性。|否|  
-|[__fastcall](../cpp/fastcall.md)|后跟的名称声明一个函数，该函数使用寄存器（如果可用）而不是用于自变量传递的堆栈。|是|  
+|[__fastcall](../cpp/fastcall.md)|后跟的名称声明一个函数，该函数使用寄存器（如果可用）而不是用于参数传递的堆栈。|是|  
 |[__restrict](../cpp/extension-restrict.md)|类似于 __declspec ([限制](../cpp/restrict.md))，但在变量上使用。|否|  
 |[__stdcall](../cpp/stdcall.md)|后跟的名称指定遵循标准调用约定的函数。|是|  
 |[__w64](../cpp/w64.md)|将数据类型标记为 64 位编译器上较大数据类型。|否|  
 |[__unaligned](../cpp/unaligned.md)|指定指向类型或其他数据的指针未对齐。|否|  
-|[__vectorcall](../cpp/vectorcall.md)|后跟的名称声明一个函数，如果可能，该函数将使用寄存器（包括 SSE 寄存器）而不是用于自变量传递的堆栈。|是|  
+|[__vectorcall](../cpp/vectorcall.md)|后跟的名称声明一个函数，如果可能，该函数将使用寄存器（包括 SSE 寄存器）而不是用于参数传递的堆栈。|是|  
   
 ## <a name="see-also"></a>请参阅  
  [C++ 语言参考](../cpp/cpp-language-reference.md)

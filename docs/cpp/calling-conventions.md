@@ -30,7 +30,7 @@ Visual C/C++ 编译器提供了用于调用内部函数和外部函数的几个�
   
 ## <a name="topics-in-this-section"></a>本节中的主题  
   
--   [自变量传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)(`__cdecl`， `__stdcall`， `__fastcall`，等)  
+-   [参数传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)(`__cdecl`， `__stdcall`， `__fastcall`，等)  
   
 -   [调用示例：函数原型和调用](../cpp/calling-example-function-prototype-and-call.md)  
   

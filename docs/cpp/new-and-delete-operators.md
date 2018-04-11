@@ -90,7 +90,7 @@ int main()
 }  
 ```  
   
- 提供到的括号中的自变量**新**传递给`Blanks::operator new`作为`chInit`自变量。 但是，全局**运算符 new**函数被隐藏，从而导致如下代码生成错误：  
+ 提供到的括号中的参数**新**传递给`Blanks::operator new`作为`chInit`参数。 但是，全局**运算符 new**函数被隐藏，从而导致如下代码生成错误：  
   
 ```cpp  
 Blanks *SomeBlanks = new Blanks;  

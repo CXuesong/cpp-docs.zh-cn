@@ -158,7 +158,7 @@ auto b = Add2(string{ "Hello" }, string{ " World" }); // b is a std::string
   
  有关详细信息，请参阅[函数模板](../cpp/function-templates.md)  
   
-## <a name="function-parameters-and-arguments"></a>函数参数和自变量  
+## <a name="function-parameters-and-arguments"></a>函数参数和参数  
  函数具有零种或多种类型的逗号分隔参数列表，其中每个参数都具有可以用于在函数体内访问它的名称。 函数模板可以指定其他类型或值参数。 调用方传递实参（其类型与形参列表兼容的具体值）。  
   
  默认情况下，参数通过值传递给函数，这意味着函数会收到所传递的对象的副本。 对于大型对象，创建副本可能成本高昂，并非始终必要。 若要使实参通过引用（特别是左值引用）进行传递，请向形参添加引用限定符：  
@@ -167,7 +167,7 @@ auto b = Add2(string{ "Hello" }, string{ " World" }); // b is a std::string
 void DoSomething(std::string& input){...}  
 ```  
   
- 当函数修改通过引用传递的参数时，它会修改原始对象，而不是本地副本。 若要防止函数修改这类自变量，请将参数限定为 const&：  
+ 当函数修改通过引用传递的参数时，它会修改原始对象，而不是本地副本。 若要防止函数修改这类参数，请将参数限定为 const&：  
   
 ```  
 void DoSomething(const std::string& input){...}  
@@ -189,7 +189,7 @@ long GetTickCount( void );
   
  请注意，尽管指定 `void` 参数是非法（此处所述的除外），但派生自类型 `void` 的类型（如指向 `void` 的指针和 `void` 的数组）可以出现在参数声明列表中的任何位置。  
   
-### <a name="default-arguments"></a>默认自变量  
+### <a name="default-arguments"></a>默认参数  
  函数签名中的最后一个或几个形参可能会分配有默认实参，这意味着调用方可能会在调用函数时省略实参（除非要指定某个其他值）。  
   
 ```  
@@ -211,7 +211,7 @@ int DoMore(int num = 5, // Not a trailing parameter!
 {...}  
 ```  
   
- 有关详细信息，请参阅[默认自变量](../cpp/default-arguments.md)。  
+ 有关详细信息，请参阅[默认参数](../cpp/default-arguments.md)。  
   
 ## <a name="function-return-types"></a>函数返回类型  
  函数可能不会返回另一个函数或内置数组;但是它可以返回到这些类型的指针或*lambda*，由此产生的函数对象。 除了这些情况，函数可以返回处于范围内的任何类型的值，或者它可以返回任何值（在这种情况下返回类型是 `void`）。  
@@ -253,7 +253,7 @@ auto Add2(const Lhs& lhs, const Rhs& rhs)
   
  请注意，`auto`不会保留它推导的类型的常量性。 对于返回值需要保留其参数的常量性或引用性的转发函数，可以使用 `decltype(auto)` 关键字，该关键字使用 `decltype` 类型推断规则并保留所有类型信息。 `decltype(auto)` 可以用作左侧的普通返回值，或结尾返回值。  
   
- 下面的示例 (基于代码从[N3493](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2013/n3493.html))，显示`decltype(auto)`正在使用的模板实例化之前未知的返回类型的函数自变量完美转发。  
+ 下面的示例 (基于代码从[N3493](http://www.open-std.org/JTC1/SC22/WG21/docs/papers/2013/n3493.html))，显示`decltype(auto)`正在使用的模板实例化之前未知的返回类型的函数参数完美转发。  
   
 ```  
 template<typename F, typename Tuple = tuple<T...>, int... I>  
@@ -378,7 +378,7 @@ int main()
 }
 ```
 
-4. 除了使用返回值本身，你可以"返回"值通过定义任意数量的参数以使用按引用传递，以便可以修改该函数或将其初始化的调用方提供的对象的值。 有关详细信息，请参阅[引用类型函数自变量](reference-type-function-arguments.md)。  
+4. 除了使用返回值本身，你可以"返回"值通过定义任意数量的参数以使用按引用传递，以便可以修改该函数或将其初始化的调用方提供的对象的值。 有关详细信息，请参阅[引用类型函数参数](reference-type-function-arguments.md)。  
   
 ## <a name="function-pointers"></a>函数指针  
  C++ 通过与 C 语言相同的方式支持函数指针。 但是更加类型安全的替代方法通常是使用函数对象。  
@@ -400,8 +400,8 @@ int (*myFunction(char* s))(int);
   
 ## <a name="see-also"></a>请参阅  
  [函数重载](../cpp/function-overloading.md)   
- [具有变量自变量列表的函数](../cpp/functions-with-variable-argument-lists-cpp.md)   
+ [具有变量参数列表的函数](../cpp/functions-with-variable-argument-lists-cpp.md)   
  [显式默认函数和已删除函数](../cpp/explicitly-defaulted-and-deleted-functions.md)   
  [针对函数的依赖于参数的名称 (Koenig) 查找](../cpp/argument-dependent-name-koenig-lookup-on-functions.md)   
- [默认自变量](../cpp/default-arguments.md)   
+ [默认参数](../cpp/default-arguments.md)   
  [内联函数](../cpp/inline-functions-cpp.md)

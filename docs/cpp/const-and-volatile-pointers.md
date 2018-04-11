@@ -94,10 +94,10 @@ pch4 = &ch;   // Error: pointer declared const
 errno_t strcpy_s( char *strDestination, size_t numberOfElements, const char *strSource );  
 ```  
   
- 前面的语句声明一个函数， [strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)，其中两个三个自变量都是指针类型的`char`。 因为通过引用传递的参数并且不通过值，该函数将为随意修改同时`strDestination`和`strSource`如果`strSource`了未声明为**const**。 声明`strSource`作为**const**向调用方保证`strSource`不能更改被调用函数。  
+ 前面的语句声明一个函数， [strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)，其中两个三个参数都是指针类型的`char`。 因为通过引用传递的参数并且不通过值，该函数将为随意修改同时`strDestination`和`strSource`如果`strSource`了未声明为**const**。 声明`strSource`作为**const**向调用方保证`strSource`不能更改被调用函数。  
   
 > [!NOTE]
->  因为没有从标准转换*typename*  **\*** 到**const** *typename*  **\***，它是合法的类型的自变量传递**char \*** 到[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)。 但是，反之不可行的;任何隐式转换存在删除**const**从对象或指针的属性。  
+>  因为没有从标准转换*typename*  **\*** 到**const** *typename*  **\***，它是合法的类型的参数传递**char \*** 到[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)。 但是，反之不可行的;任何隐式转换存在删除**const**从对象或指针的属性。  
   
  A **const**给定类型的指针可以分配给同一类型的指针。 但是，指针，不是**const**不能分配给**const**指针。 以下代码显示了正确和错误的赋值：  
   

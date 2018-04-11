@@ -155,9 +155,9 @@ auto y = [] (auto first, auto second)
 };  
 ```  
   
- lambda 表达式可以将另一个 lambda 表达式作为其自变量。 有关详细信息，请参阅"高阶 Lambda 表达式"主题[Lambda 表达式的示例](../cpp/examples-of-lambda-expressions.md)。  
+ lambda 表达式可以将另一个 lambda 表达式作为其参数。 有关详细信息，请参阅"高阶 Lambda 表达式"主题[Lambda 表达式的示例](../cpp/examples-of-lambda-expressions.md)。  
   
- 由于参数列表是可选的如果在不将自变量传递到 lambda 表达式，并且其 lambda 声明符不包含，则可以省略空括号*异常规范*， *尾随返回类型*，或`mutable`。  
+ 由于参数列表是可选的如果在不将参数传递到 lambda 表达式，并且其 lambda 声明符不包含，则可以省略空括号*异常规范*， *尾随返回类型*，或`mutable`。  
   
 ### <a name="mutable-specification"></a>可变规范  
  通常，lambda 的函数调用运算符为 const-by-value，但对 `mutable` 关键字的使用可将其取消。它不会生成可变的数据成员。 利用可变规范，lambda 表达式的主体可以修改通过值捕获的变量。 本文后面的一些示例将显示如何使用 `mutable`。  

@@ -39,9 +39,9 @@ return-type __stdcall function-name[(argument-list)]
   
 |元素|实现|  
 |-------------|--------------------|  
-|自变量传递顺序|从右到左。|  
+|参数传递顺序|从右到左。|  
 |参数传递约定|按值，除非传递指针或引用类型。|  
-|堆栈维护职责|调用的函数从堆栈中弹出自己的自变量。|  
+|堆栈维护职责|调用的函数从堆栈中弹出自己的参数。|  
 |名称修饰约定|下划线 (_) 是名称的前缀。 名称后跟后面是参数列表中的字节数（采用十进制）的符号 (@)。 因此，声明为 `int func( int a, double b )` 的函数按如下所示进行修饰：`_func@12`|  
 |大小写转换约定|无|  
   
@@ -82,5 +82,5 @@ typedef BOOL (__stdcall *funcname_ptr)(void * arg1, const char * arg2, DWORD fla
 ```  
   
 ## <a name="see-also"></a>请参阅  
- [自变量传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
+ [参数传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
  [关键字](../cpp/keywords-cpp.md)

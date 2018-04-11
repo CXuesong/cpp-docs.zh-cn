@@ -65,7 +65,7 @@ int wmain(int argc, wchar_t *argv[], wchar_t *envp[]);
  或者，`main` 和 `wmain` 函数可以声明为返回 `void`（没有返回值）。 如果你声明`main`或`wmain`为返回`void`，你不能通过将退出代码返回到父进程或操作系统[返回](../cpp/return-statement-in-program-termination-cpp.md)语句。 若要返回退出代码时`main`或`wmain`声明为`void`，必须使用[退出](../cpp/exit-function.md)函数。  
   
 **结束 Microsoft 专用**  
- `argc` 和 `argv` 的类型由语言定义。 名称 `argc`、`argv` 和 `envp` 是传统的，但编译器不需要这些名称。 有关详细信息及示例，请参阅[自变量定义](../cpp/argument-definitions.md)。  
+ `argc` 和 `argv` 的类型由语言定义。 名称 `argc`、`argv` 和 `envp` 是传统的，但编译器不需要这些名称。 有关详细信息及示例，请参阅[参数定义](../cpp/argument-definitions.md)。  
   
 ## <a name="see-also"></a>请参阅  
  [关键字](../cpp/keywords-cpp.md)   

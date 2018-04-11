@@ -1,5 +1,5 @@
 ---
-title: "函数具有变量自变量列表 （C++） |Microsoft 文档"
+title: "函数具有变量参数列表 （C++） |Microsoft 文档"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -27,23 +27,23 @@ ms.translationtype: MT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 01/25/2018
 ---
-# <a name="functions-with-variable-argument-lists--c"></a>包含变量自变量列表的函数 （C++）
-如果函数声明中最后一个成员是省略号 (...)，则函数声明可采用数量可变的自变量。 在这些情况下，C++ 只为显式声明的参数提供类型检查。 即使自变量的数量和类型是可变的，在需要使函数泛化时也可使用变量自变量列表。 函数的系列是一个示例使用变量自变量列表的函数。`printf`*自变量声明列表*  
+# <a name="functions-with-variable-argument-lists--c"></a>包含变量参数列表的函数 （C++）
+如果函数声明中最后一个成员是省略号 (...)，则函数声明可采用数量可变的参数。 在这些情况下，C++ 只为显式声明的参数提供类型检查。 即使参数的数量和类型是可变的，在需要使函数泛化时也可使用变量参数列表。 函数的系列是一个示例使用变量参数列表的函数。`printf`*参数声明列表*  
   
-## <a name="functions-with-variable-arguments"></a>包含变量自变量的函数  
- 若要访问声明后的自变量，请使用包含在标准包含文件中的宏\<g.h > 如下所述。  
+## <a name="functions-with-variable-arguments"></a>包含变量参数的函数  
+ 若要访问声明后的参数，请使用包含在标准包含文件中的宏\<g.h > 如下所述。  
   
  **Microsoft 专用**  
   
- Microsoft C++ 允许将省略号指定为自变量（如果省略号是最后一个自变量且在逗号的后面）。 因此，声明 `int Func( int i, ... );` 是合法的，但 `int Func( int i ... );` 不是合法的。  
+ Microsoft C++ 允许将省略号指定为参数（如果省略号是最后一个参数且在逗号的后面）。 因此，声明 `int Func( int i, ... );` 是合法的，但 `int Func( int i ... );` 不是合法的。  
   
  **结束 Microsoft 专用**  
   
- 采用数量可变的自变量的函数声明至少需要一个占位符自变量（即使不使用它）。 如果未提供此占位符自变量，则无法访问其余自变量。  
+ 采用数量可变的参数的函数声明至少需要一个占位符参数（即使不使用它）。 如果未提供此占位符参数，则无法访问其余参数。  
   
- 当 `char` 类型的参数作为变量参数进行传递时，它们将被转换为 `int` 类型。 同样，当类型自变量**float**传递作为变量自变量，它们会转换为类型**double**。 其他类型的参数受常见整型和浮点型提升的限制。 请参阅[标准转换](standard-conversions.md)有关详细信息。  
+ 当 `char` 类型的参数作为变量参数进行传递时，它们将被转换为 `int` 类型。 同样，当类型参数**float**传递作为变量参数，它们会转换为类型**double**。 其他类型的参数受常见整型和浮点型提升的限制。 请参阅[标准转换](standard-conversions.md)有关详细信息。  
   
- 使用自变量列表中的省略号 (...) 来声明需要变量列表的函数。 使用的类型和中所述的宏\<g.h > 包含文件访问自变量传递的变量列表。 有关这些宏的详细信息，请参阅[va_arg、 va_copy、 va_end、 va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)。 （处于 C 运行时库文档中）。  
+ 使用参数列表中的省略号 (...) 来声明需要变量列表的函数。 使用的类型和中所述的宏\<g.h > 包含文件访问参数传递的变量列表。 有关这些宏的详细信息，请参阅[va_arg、 va_copy、 va_end、 va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)。 （处于 C 运行时库文档中）。  
   
  下面的示例演示如何与类型一起使用宏 (在中声明\<g.h >): 
   

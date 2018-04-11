@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
 }  
 ```  
   
- 请注意，对函数 `display_balance` 的首次调用（它将采用类型 `Money` 的参数）不需要转换，因为它的参数类型正确。 但是，在第二次调用`display_balance`，需要使用转换，因为自变量类型`double`值为`49.95`，是不什么函数的要求。 该函数不能直接使用此值，但是由于存在从参数类型 (`double`) 到匹配的参数类型 (`Money`) 的转换，因此类型 `Money` 的临时值将通过该参数进行构造并将用于完成该函数调用。 在第三个调用`display_balance`，请注意，该参数不`double`，而是`float`值为`9.99`-尚未函数调用可以仍完成，因为编译器可以执行的标准转换和 — 在这种情况下从`float`到`double`-然后执行从用户定义的转换`double`到`Money`完成必要的转换。  
+ 请注意，对函数 `display_balance` 的首次调用（它将采用类型 `Money` 的参数）不需要转换，因为它的参数类型正确。 但是，在第二次调用`display_balance`，需要使用转换，因为参数类型`double`值为`49.95`，是不什么函数的要求。 该函数不能直接使用此值，但是由于存在从参数类型 (`double`) 到匹配的参数类型 (`Money`) 的转换，因此类型 `Money` 的临时值将通过该参数进行构造并将用于完成该函数调用。 在第三个调用`display_balance`，请注意，该参数不`double`，而是`float`值为`9.99`-尚未函数调用可以仍完成，因为编译器可以执行的标准转换和 — 在这种情况下从`float`到`double`-然后执行从用户定义的转换`double`到`Money`完成必要的转换。  
   
 ### <a name="declaring-conversion-constructors"></a>声明转换构造函数  
  以下规则适用于声明转换构造函数：  

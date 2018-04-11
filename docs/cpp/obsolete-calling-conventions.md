@@ -39,4 +39,4 @@ ms.lasthandoff: 01/25/2018
 **结束 Microsoft 专用**  
   
 ## <a name="see-also"></a>请参阅  
- [自变量传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)
+ [参数传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)

@@ -40,7 +40,7 @@ ms.lasthandoff: 01/16/2018
  标记一个函数作为`noexcept`仅当调用，直接或间接的所有函数都都还`noexcept`或`const`。 编译器不一定会检查可能归因于的异常的每个代码路径`noexcept`函数。 如果异常未退出标记的函数的外部范围`noexcept`， [std:: terminate](../standard-library/exception-functions.md#terminate)立即，调用和将调用的任何范围内对象的析构函数不能保证。 使用`noexcept`而不是动态异常说明符`throw()`，该标准中现已弃用。 我们建议你应用`noexcept`向永远不会允许异常传播到调用堆栈的任何函数。 声明函数时`noexcept`，它使得编译器能够在多种不同的上下文中生成更高效的代码。 有关详细信息，请参阅[异常规范](exception-specifications-throw-cpp.md)。   
   
 ## <a name="example"></a>示例  
-可将复制其自变量的模板函数声明为`noexcept`前提是要复制的对象是普通的旧数据类型 (POD)。 此类函数可以如下声明：  
+可将复制其参数的模板函数声明为`noexcept`前提是要复制的对象是普通的旧数据类型 (POD)。 此类函数可以如下声明：  
   
 ```cpp  
 #include <type_traits>  

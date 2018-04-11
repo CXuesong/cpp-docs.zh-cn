@@ -29,7 +29,7 @@ ms.lasthandoff: 12/21/2017
   
 |元素|实现|  
 |-------------|--------------------|  
-|自变量传递顺序|从右到左。|  
+|参数传递顺序|从右到左。|  
 |堆栈维护职责|调用函数从堆栈中弹出参数。|  
 |名称修饰约定|下划线字符 (_) 前缀的名称，除非\_导出使用 C 链接的 _cdecl 函数。|  
 |大小写转换约定|不执行任何大小写转换。|  
@@ -39,7 +39,7 @@ ms.lasthandoff: 12/21/2017
   
  将 `__cdecl` 修饰符放置在变量或者函数名称的前面。 由于 C 命名和调用约定为默认值，时，才必须使用`__cdecl`在 x86 代码是指定了**/Gv** (vectorcall)、 **/Gz** (stdcall) 或**/Gr** (fastcall) 编译器选项。 [/Gd](../build/reference/gd-gr-gv-gz-calling-convention.md)编译器选项强制`__cdecl`调用约定。  
   
- 在 ARM 和 x64 处理器上，接受 `__cdecl`，但编译器一般会忽略它。 按照 ARM 和 x64 上的约定，自变量将尽可能传入寄存器，后续自变量传递到堆栈中。 在 x64 代码中，使用`__cdecl`重写**/Gv**编译器选项并使用默认 x64 调用约定。  
+ 在 ARM 和 x64 处理器上，接受 `__cdecl`，但编译器一般会忽略它。 按照 ARM 和 x64 上的约定，参数将尽可能传入寄存器，后续参数传递到堆栈中。 在 x64 代码中，使用`__cdecl`重写**/Gv**编译器选项并使用默认 x64 调用约定。  
   
  对于非静态类函数，如果函数是超行定义的，则调用约定修饰符不必在超行定义中指定。 也就是说，对于类非静态成员方法，在定义时假定声明期间指定的调用约定。 给定此类定义：  
   
@@ -72,5 +72,5 @@ typedef BOOL (__cdecl *funcname_ptr)(void * arg1, const char * arg2, DWORD flags
 ```  
   
 ## <a name="see-also"></a>请参阅  
- [自变量传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
+ [参数传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
  [关键字](../cpp/keywords-cpp.md)

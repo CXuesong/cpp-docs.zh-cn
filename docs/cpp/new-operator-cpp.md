@@ -35,7 +35,7 @@ ms.lasthandoff: 01/25/2018
 ```  
   
 ## <a name="remarks"></a>备注  
- 如果不成功，**新**返回零或引发异常; 请参阅[新和 delete 运算符](../cpp/new-and-delete-operators.md)有关详细信息。 你可以更改此默认行为： 编写自定义异常处理例程并调用[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)带有函数名称作为其自变量的运行时库函数。  
+ 如果不成功，**新**返回零或引发异常; 请参阅[新和 delete 运算符](../cpp/new-and-delete-operators.md)有关详细信息。 你可以更改此默认行为： 编写自定义异常处理例程并调用[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)带有函数名称作为其参数的运行时库函数。  
   
  有关如何在托管堆上创建对象的信息，请参阅[gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)。  
   
@@ -65,12 +65,12 @@ int (**p) () = new (int (*[7]) ());
 delete *p;  
 ```  
   
- 如果使用运算符**新**而无需任何额外自变量，且与编译[/GX](../build/reference/gx-enable-exception-handling.md)， [/EHa](../build/reference/eh-exception-handling-model.md)，或[/EHs](../build/reference/eh-exception-handling-model.md)选项，编译器会将生成代码来调用运算符**删除**在构造函数引发异常。  
+ 如果使用运算符**新**而无需任何额外参数，且与编译[/GX](../build/reference/gx-enable-exception-handling.md)， [/EHa](../build/reference/eh-exception-handling-model.md)，或[/EHs](../build/reference/eh-exception-handling-model.md)选项，编译器会将生成代码来调用运算符**删除**在构造函数引发异常。  
   
  下面的列表描述的语法元素**新**:  
   
  *placement*  
- 提供一种传递附加自变量，如果重载**新**。  
+ 提供一种传递附加参数，如果重载**新**。  
   
  *type-name*  
  指定要分配的类型；它可以是内置类型，也可以是用户定义的类型。 如果类型规范非常复杂，则可用括号将其括起来以强制实施绑定顺序。  
@@ -123,7 +123,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>示例  
- 如果你使用的放置新形式**新**运算符，具有除了大小自变量的分配，编译器的窗体不支持的放置形式**删除**运算符如果构造函数引发异常。 例如:  
+ 如果你使用的放置新形式**新**运算符，具有除了大小参数的分配，编译器的窗体不支持的放置形式**删除**运算符如果构造函数引发异常。 例如:  
   
 ```  
 // expre_new_Operator2.cpp  
@@ -182,15 +182,15 @@ int main()
 }  
 ```  
   
- 在此示例中，该对象`CheckingAcct`使用分配**新**指定运算符，但没有默认初始化。 因此，调用了类的默认构造函数 `Acct()`。 然后，以相同的方式分配了对象 `SavingsAcct`，只不过将它显式初始化为 34.98。 由于 34.98 是类型**double**，调用采用该类型的自变量的构造函数来处理初始化。 最后，将非类类型 `HowMuch` 初始化为 43.0。  
+ 在此示例中，该对象`CheckingAcct`使用分配**新**指定运算符，但没有默认初始化。 因此，调用了类的默认构造函数 `Acct()`。 然后，以相同的方式分配了对象 `SavingsAcct`，只不过将它显式初始化为 34.98。 由于 34.98 是类型**double**，调用采用该类型的参数的构造函数来处理初始化。 最后，将非类类型 `HowMuch` 初始化为 43.0。  
   
  如果对象是类类型的该类具有构造函数 （如同前面的示例中），可以通过初始化了对象**新**运算符仅当满足以下条件之一时：  
   
--   初始值设定项中提供的自变量与构造函数的自变量一致。  
+-   初始值设定项中提供的参数与构造函数的参数一致。  
   
--   该类有一个默认构造函数（可在没有自变量的情况下调用的构造函数）。  
+-   该类有一个默认构造函数（可在没有参数的情况下调用的构造函数）。  
   
- 使用分配数组时，没有显式的每个元素初始化可以进行**新**运算符; 仅默认构造函数，如果存在，则调用。 请参阅[默认自变量](../cpp/default-arguments.md)有关详细信息。  
+ 使用分配数组时，没有显式的每个元素初始化可以进行**新**运算符; 仅默认构造函数，如果存在，则调用。 请参阅[默认参数](../cpp/default-arguments.md)有关详细信息。  
   
  如果内存分配失败（`operator new` 的返回值为 0），则不执行初始化。 这可防止尝试初始化不存在的数据。  
   
@@ -238,14 +238,14 @@ int main()
  当编译器遇到**新**运算符分配类型的对象`type`，它会发出调用`type` **:: 运算符 new (sizeof (** `type` **))**或如果不是用户定义`operator new`定义， **:: 运算符 new (sizeof (** `type` **))**。 因此，**新**运算符可以为对象分配正确的内存量。  
   
 > [!NOTE]
->  自变量`operator new`属于类型**size_t**。 此类型定义中\<.h >， \<l l >， \<y.h >， \<h.h >， \<stddef.h >， \<.h >， \<stdlib.h >， \<string.h >，和\<.h >。  
+>  参数`operator new`属于类型**size_t**。 此类型定义中\<.h >， \<l l >， \<y.h >， \<h.h >， \<stddef.h >， \<.h >， \<stdlib.h >， \<string.h >，和\<.h >。  
   
  在语法中的选项允许的规范*放置*(请参阅有关语法[new 运算符](../cpp/new-operator-cpp.md))。 *放置*参数可以仅用于用户定义的实现`operator new`; 它允许将额外信息传递给`operator new`。 一个具有表达式*放置*字段如`T *TObject = new ( 0x0040 ) T;`转换为`T *TObject = T::operator new( sizeof( T ), 0x0040 );`如果类 T 具有成员运算符 new，否则到`T *TObject = ::operator new( sizeof( T ), 0x0040 );`。  
   
  原始用途*放置*字段是允许在用户指定的地址分配硬件相关对象。  
   
 > [!NOTE]
->  尽管前面的示例说明中的只有一个参数*放置*字段，可以将多少多余的自变量传递给不受限制`operator new`这种方式。  
+>  尽管前面的示例说明中的只有一个参数*放置*字段，可以将多少多余的参数传递给不受限制`operator new`这种方式。  
   
  即使已为类类型定义 `operator new`，也可以采用此示例的形式来使用全局运算符：  
   

@@ -81,6 +81,6 @@ Bill is 40
   
 ## <a name="see-also"></a>请参阅  
  [引用](../cpp/references-cpp.md)   
- [引用类型函数自变量](../cpp/reference-type-function-arguments.md)   
+ [引用类型函数参数](../cpp/reference-type-function-arguments.md)   
  [引用类型函数返回](../cpp/reference-type-function-returns.md)   
  [对指针的引用](../cpp/references-to-pointers.md)

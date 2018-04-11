@@ -99,5 +99,5 @@ int main() {
 ```  
   
 ## <a name="see-also"></a>请参阅  
- [自变量传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
+ [参数传递和命名约定](../cpp/argument-passing-and-naming-conventions.md)   
  [关键字](../cpp/keywords-cpp.md)

@@ -221,7 +221,7 @@ int main()
 ##  <a name="higherOrderLambdaExpressions"></a>高阶 Lambda 函数  
   
 ### <a name="example"></a>示例  
- 许多编程语言都支持这一概念*高阶函数。* 高阶函数是采用另一个 lambda 表达式作为其自变量或返回 lambda 表达式的 lambda 表达式。 你可以使用[函数](../standard-library/function-class.md)类，使得 C++ lambda 表达式的行为类似高阶函数。 以下示例显示返回 `function` 对象的 lambda 表达式和采用 `function` 对象作为其参数的 lambda 表达式。  
+ 许多编程语言都支持这一概念*高阶函数。* 高阶函数是采用另一个 lambda 表达式作为其参数或返回 lambda 表达式的 lambda 表达式。 你可以使用[函数](../standard-library/function-class.md)类，使得 C++ lambda 表达式的行为类似高阶函数。 以下示例显示返回 `function` 对象的 lambda 表达式和采用 `function` 对象作为其参数的 lambda 表达式。  
   
 ### <a name="code"></a>代码  
   
